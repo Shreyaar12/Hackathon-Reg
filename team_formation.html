@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Formation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>University Hackathon</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="register.html">Register</a>
+            <a href="contact.html">Contact</a>
+            <a href="team_formation.html">Team Formation</a>
+            <a href="fee.html">Fee Calculator</a>
+        </nav>
+    </header>
+    <main>
+        <div class="form-container">
+            <h2>Team Formation</h2>
+            <form oninput="updateSummary()">
+                <div class="form-group">
+                    <label for="team_name">Team Name</label>
+                    <input type="text" id="team_name" name="team_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="team_leader">Team Leader</label>
+                    <input type="text" id="team_leader" name="team_leader" required>
+                </div>
+                <div class="form-group">
+                    <label for="team_member1">Team Member 1</label>
+                    <input type="text" id="team_member1" name="team_member1" required>
+                </div>
+                <div class="form-group">
+                    <label for="team_member2">Team Member 2</label>
+                    <input type="text" id="team_member2" name="team_member2" required>
+                </div>
+                <div class="form-group">
+                    <label for="team_member3">Team Member 3</label>
+                    <input type="text" id="team_member3" name="team_member3" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Project Category</label>
+                    <select id="category" name="category" required>
+                        <option value="web_development">Web Development</option>
+                        <option value="mobile_app">Mobile App</option>
+                        <option value="data_science">Data Science</option>
+                    </select>
+                </div>
+                <output id="team_summary"></output>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 University Hackathon. All rights reserved.</p>
+    </footer>
+    <script>
+        function updateSummary() {
+            const teamName = document.getElementById('team_name').value;
+            const teamLeader = document.getElementById('team_leader').value;
+            const teamMember1 = document.getElementById('team_member1').value;
+            const teamMember2 = document.getElementById('team_member2').value;
+            const teamMember3 = document.getElementById('team_member3').value;
+            const category = document.getElementById('category').value;
+
+            const summary = `
+                Team Name: ${teamName}<br>
+                Team Leader: ${teamLeader}<br>
+                Team Members: ${teamMember1}, ${teamMember2}, ${teamMember3}<br>
+                Project Category: ${category}
+            `;
+
+            document.getElementById('team_summary').innerHTML = summary;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>University Hackathon</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="register.html">Register</a>
+            <a href="contact.html">Contact</a>
+            <a href="team_formation.html">Team Formation</a>
+            <a href="fee.html">Fee Calculator</a>
+        </nav>
+    </header>
+    <main>
+        <div class="form-container">
+            <h2>Fee Calculator</h2>
+            <form oninput="calculateFee()">
+                <div class="form-group">
+                    <label for="participants">Number of Participants</label>
+                    <input type="number" id="participants" name="participants" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="participant_type">Type of Participant</label>
+                    <select id="participant_type" name="participant_type" required>
+                        <option value="student">Student</option>
+                        <option value="professional">Professional</option>
+                    </select>
+                </div>
+                <output id="total_fee"></output>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 University Hackathon. All rights reserved.</p>
+    </footer>
+    <script>
+        function calculateFee() {
+            const participants = document.getElementById('participants').value;
+            const participantType = document.getElementById('participant_type').value;
+            let feePerParticipant;
+
+            if (participantType === 'student') {
+                feePerParticipant = 50;
+            } else {
+                feePerParticipant = 100;
+            }
+
+            const totalFee = participants * feePerParticipant;
+            document.getElementById('total_fee').innerHTML = `Total Fee: $${totalFee}`;
+        }
+    </script>
+</body>
+</html>

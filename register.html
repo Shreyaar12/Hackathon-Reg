@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for Hackathon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>University Hackathon</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="register.html">Register</a>
+            <a href="contact.html">Contact</a>
+            <a href="team_formation.html">Team Formation</a>
+            <a href="fee.html">Fee Calculator</a>
+        </nav>
+    </header>
+    <main>
+        <div class="form-container">
+            <h2>Register for Hackathon</h2>
+            <form action="confirmation.html" method="GET">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+                </div>
+                <div class="form-group">
+                    <label for="skillset">Skill Set</label>
+                    <select id="skillset" name="skillset" required>
+                        <option value="developer">Developer</option>
+                        <option value="designer">Designer</option>
+                        <option value="project_manager">Project Manager</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Level of Experience</label>
+                    <div>
+                        <input type="radio" id="beginner" name="experience" value="beginner" required>
+                        <label for="beginner">Beginner</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="intermediate" name="experience" value="intermediate" required>
+                        <label for="intermediate">Intermediate</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="advanced" name="experience" value="advanced" required>
+                        <label for="advanced">Advanced</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the terms and conditions</label>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 University Hackathon. All rights reserved.</p>
+    </footer>
+</body>
+</html>
